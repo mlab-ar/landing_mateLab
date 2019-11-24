@@ -1,0 +1,29 @@
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+body{
+  background: url('../img/bg_home_5.jpg') no-repeat fixed;
+  background-size: cover;
+}
+#logo-container img{
+  margin: 7px 0;
+}
+input, textarea{
+  color: #fff;
+}
+input:focus {
+  border-bottom: 1px solid #fff !important;
+  box-shadow: 0 1px 0 0 #fff !important;
+}
+input:not(.browser-default), textarea.materialize-textarea{
+  border-bottom: 1px solid #fff !important;
+}
+label.active {
+  color: #fff !important;
+}
+.custom-footer {
+  background-color: rgba(68, 68, 68, 0.59) !important;
+}
