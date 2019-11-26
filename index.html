@@ -118,20 +118,20 @@
         <div id="contactenosMetaLab" class="section">
           <div class="row">
             <h3 class="tituloPrincipal">CONTACTENOS</h3>
-            <form class="col s12">
+            <form class="col s12" method="POST" action="mailContact.php" id="contact">
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="first_name" type="text" class="validate" />
+                  <input id="first_name" name="first_name" type="text" class="validate" required/>
                   <label for="first_name">Nombres</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="last_name" type="text" class="validate" />
+                  <input id="last_name" name="last_name" type="text" class="validate" required/>
                   <label for="last_name">Apellido</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" type="email" class="validate" />
+                  <input id="email" name="email" type="email" class="validate" required/>
                   <label for="email">Email</label>
                 </div>
               </div>
@@ -139,12 +139,17 @@
                 <div class="input-field col s12">
                   <textarea
                     id="textarea1"
-                    class="validate materialize-textarea"
+                    name="message"
+                    class="validate materialize-textarea" required
                   ></textarea>
                   <label for="textarea1">Textarea</label>
                 </div>
               </div>
-              <a class="waves-effect waves-light btn">Enviar</a>
+              <input
+              type="submit"
+              class="waves-effect waves-light btn" value ="Enviar"
+              />
+              <div  class="respuestaAjax"></div>
             </form>
           </div>
         </div>
@@ -190,6 +195,7 @@
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/enviarMailAjax.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
   </body>
