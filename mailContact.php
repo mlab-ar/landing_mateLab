@@ -21,6 +21,7 @@ if (!empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_PO
 	$mail->addReplyTo("contacto@matelab.com.ar", "Mate Lab");
 	$mail->Subject  = "Mate Lab Desarrollamos tecnologia ";
 	$mail->addAddress($email);
+	/**GABI PONELE TU MAGIA A LA PLANTILLA DEL MAIL JAJAJA */
 	$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">	
 						<center>								
 							<img style="padding:20px; width:10%" src="http://matelab.com.ar/img/mate.png">
@@ -50,6 +51,7 @@ if (!empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_PO
 	$mailMateLab->addReplyTo($email, $first_name);
 	$mailMateLab->Subject  = "Contacto";
 	$mailMateLab->addAddress('contacto@matelab.com.ar');
+	/**GABI ACA LO MISMO JAJAJA*/
 	$mailMateLab->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">
 						<center>						
 							<img style="padding:20px; width:10%" src="http://matelab.com.ar/img/mate.png">
