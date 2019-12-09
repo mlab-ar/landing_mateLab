@@ -33,9 +33,9 @@ if (!empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_PO
 	$mail->Username = $smtpUsuario; 
 	$mail->Password = $smtpClave;
 	
-	$mail->setFrom("contacto@matelab.com.ar", "Mate Lab");
-	$mail->addReplyTo("contacto@matelab.com.ar", "Mate Lab");
-	$mail->Subject  = "Mate Lab Desarrollamos tecnologia ";
+	$mail->setFrom("contacto@matelab.com.ar", "MateLab");
+	$mail->addReplyTo("contacto@matelab.com.ar", "MateLab");
+	$mail->Subject  = "MateLab Desarrollamos tecnologia ";
 	$mail->addAddress($email);
 	/**GABI PONELE TU MAGIA A LA PLANTILLA DEL MAIL JAJAJA */
 	$mail->msgHTML('<div style="width:100%; background:#eee; position:relative; font-family:sans-serif; padding-bottom:40px">	
