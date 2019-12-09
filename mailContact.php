@@ -5,7 +5,13 @@
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
 	use PHPMailer\PHPMailer\SMTP;
-if (!empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_POST['email']) and !empty($_POST['message']) ) {
+	require("classMailer/class.phpmailer.php");
+	require("classMailer/class.smtp.php");
+
+	if (!empty($_POST['first_name']) 
+		and !empty($_POST['last_name']) 
+		and !empty($_POST['email']) 
+		and !empty($_POST['message']) ) {
 
 	/**DATOS DE LA CUENTA Y SERVIDOR SMTP */
 	$smtpHost = "c1401544.ferozo.com";  
