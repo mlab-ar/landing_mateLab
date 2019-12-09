@@ -4,7 +4,14 @@
 	/**TRAEMOS LAS CLASES NECESARIAS */
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
+	use PHPMailer\PHPMailer\SMTP;
 if (!empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_POST['email']) and !empty($_POST['message']) ) {
+
+	/**DATOS DE LA CUENTA Y SERVIDOR SMTP */
+	$smtpHost = "c1401544.ferozo.com";  
+	$smtpUsuario = "contacto@matelab.com.ar";  
+	$smtpClave = "MateAmargo2019";  
+
 	/**RECIBIMOS LOS DATOS DEL FORM */
 	$first_name = $_POST['first_name'];
 	$last_name = $_POST['last_name'];
@@ -17,6 +24,15 @@ if (!empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_PO
 	$mail = new PHPMailer;
 	$mail->Charset = "UTF-8";
 	$mail->isMail();
+
+	/**CONFIGURACIONES SMTP */
+	$mail->SMTPAuth = true;
+	$mail->Port = 465; 
+	$mail->SMTPSecure = 'ssl';
+	$mail->Host = $smtpHost; 
+	$mail->Username = $smtpUsuario; 
+	$mail->Password = $smtpClave;
+	
 	$mail->setFrom("contacto@matelab.com.ar", "Mate Lab");
 	$mail->addReplyTo("contacto@matelab.com.ar", "Mate Lab");
 	$mail->Subject  = "Mate Lab Desarrollamos tecnologia ";
@@ -47,6 +63,15 @@ if (!empty($_POST['first_name']) and !empty($_POST['last_name']) and !empty($_PO
 	$mailMateLab = new PHPMailer;
 	$mailMateLab->Charset = "UTF-8";
 	$mailMateLab->isMail();
+
+	/**CONFIGURACIONES SMTP */
+	$mailMateLab->SMTPAuth = true;
+	$mailMateLab->Port = 465; 
+	$mailMateLab->SMTPSecure = 'ssl';
+	$mailMateLab->Host = $smtpHost; 
+	$mailMateLab->Username = $smtpUsuario; 
+	$mailMateLab->Password = $smtpClave;
+
 	$mailMateLab->setFrom($email, $first_name);
 	$mailMateLab->addReplyTo($email, $first_name);
 	$mailMateLab->Subject  = "Contacto";
