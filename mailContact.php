@@ -103,9 +103,13 @@
 	/**Comprobamos que los emails fueron eviados correctamente */
 	if (!$envio) {
 		$error = array('error' => 'No te pudimos enviar el email a tu casilla de contacto, por favor verifica tu email.');
+		$mensajeError =$mailMateLab->errorMessage();
+		$error = array('error' => $mensajeError);
 	} else if (!$envioMateLab) {
 
 		$error = array('error' => 'Ocurrió un error inesperado con Mate Lab Por favor recargue la página.');
+		$mensajeError =$mailMateLab->errorMessage();
+		$error = array('error' => $mensajeError);
 	}
 
 	if (!empty($error)) {
